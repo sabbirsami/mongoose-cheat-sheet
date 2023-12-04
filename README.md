@@ -217,6 +217,7 @@ module.exports = Image;
 | `db.users.insertOne({ name: “Sami” })` | Add a new document with the name of Sami into the users collection |
 | `insertMany` | Create multi new documents inside a specific collection |
 | `db.users.insertMany([{ age: 26 }, { age: 20 }])` | Add two new documents with the age of 26 and 20 into the users collection |
+|  ___________________ | _____________________________________________________________________________________________________________________|
 
 #### Read
 
@@ -254,6 +255,7 @@ module.exports = Image;
 | `db.users.deleteOne({ age: 20 })` | Delete the first user with an age of 20 |
 | `deleteMany` | Delete all documents that match the filter object |
 | `db.users.deleteMany({ age: 12 })` | Delete all users with an age of 12 |
+|  ___________________ | _____________________________________________________________________________________________________________________|
 
 #### Complex Filter Object
 
@@ -270,6 +272,7 @@ module.exports = Image;
 | `$not` | Negate the filter inside of `$not` |
 | `$exists` | Check if a field exists |
 | `$expr` | Do comparisons between different fields |
+|  ___________________ | _____________________________________________________________________________________________________________________________|
 
 #### Complex Update Object
 
@@ -281,6 +284,7 @@ module.exports = Image;
 | `$unset` | Remove a field |
 | `$push` | Add a value to an array field |
 | `$pull` | Remove a value from an array field |
+|  ___________________ | _____________________________________________________________________________________________________________________________|
 
 #### Read Modifiers
 
@@ -289,6 +293,7 @@ module.exports = Image;
 | `sort` | Sort the results of a find by the given fields |
 | `limit` | Only return a set number of documents |
 | `skip` | Skip a set number of documents from the beginning |
+|  ___________________ | _____________________________________________________________________________________________________________________________|
 
 #### `If you find any kind of error please don't hesitate to reach me.😊 Or if you find it truly helpful don't forget to give it a star ⭐`
 <p align="center">
