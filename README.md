@@ -15,6 +15,7 @@ app.use(
             origin: [
                 "http://localhost:5173",
                 "https://sabbir-mohammad-sami.web.app/"
+                "https://sabbir-mohammad-sami.web.app/"
             ],
         })
     );
