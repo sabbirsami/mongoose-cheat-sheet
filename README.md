@@ -92,7 +92,8 @@ In Mongoose, a schema is a blueprint that defines the structure of documents wit
 const imageSchema = new mongoose.Schema({
   imageUrl: {
     type: String,
-    required: true, // if you set (required: true,) then if the user doesn't provide this URL it will not save data. But if it's not required then you can just remove it.
+    required: true, // if you set (required: true,) then if the user doesn't provide this URL it will not
+                    // save data. But if it's not required then you can just remove it.
   },
   caption: {
     type: String,
@@ -108,7 +109,10 @@ const imageSchema = new mongoose.Schema({
   },
 });
 
-// Create a Mongoose model based on the schema. This model first parameter defines what's going to be your database collection name. But remember if you set your database name image then it saves the database collection name as images which means it always adds s to your provided model name.
+// Create a Mongoose model based on the schema. This model first parameter defines what's going to be your
+// database collection name. But remember if you set your database name image then it saves the database
+// collection name as images which means it always adds s to your provided model name.
+
 const Image = mongoose.model('Image', imageSchema);
 
 ```
