@@ -82,6 +82,28 @@ main()
 
 ```
 
+### Connect Mongoose with the existing database
+```JS
+const connectDB = async () => {
+    try {
+        const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@clusterName.5nhfk.mongodb.net/?retryWrites=true&w=majority`;
+        await mongoose
+            .connect(url, {
+                dbName: "<put your database name here>",
+            })
+            .then(() => {
+                console.log("Database connect successfully");
+            })
+            .catch((err) => {
+                console.log("connection fail", error);
+            });
+    } catch (error) {
+        console.log("connection fail", error);
+    }
+};
+
+```
+
 ### 3. Now if you have a gallery section where users can add photo with captions and you want to save this data in your database with imageUrl, caption, uploadDate, uploadedBy. Then you need to create a Schema first. 
 #### `Now the question is what is Schema in Mongoose?`
 In Mongoose, a schema is a blueprint that defines the structure of documents within a collection in a MongoDB database. You can check and validate what the user is trying to post if it is not what you need then you can throw an error message.
