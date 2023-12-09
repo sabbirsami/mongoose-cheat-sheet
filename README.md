@@ -228,6 +228,50 @@ const Image = mongoose.model('Image', imageSchema);
 module.exports = Image;
 ```
 
+### Validation and Sanitization:
+
+- #### Validation for String Length:
+```JS
+caption: {
+    type: String,
+    maxLength: 150,
+    minLength: 5,
+},
+
+```
+- #### Custom Validation with a Regular Expression:
+```JS
+
+imageUrl: {
+    type: String,
+    required: true,
+    validate: {
+        validator: function (value) {
+            // Validate that the URL follows a specific pattern
+            return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(value);
+        },
+        message: "Invalid imageUrl format",
+    },
+},
+
+```
+- #### Validation for Date:
+```JS
+
+uploadDate: {
+    type: Date,
+    default: Date.now,
+    validate: {
+        validator: function (value) {
+            // Validate that the date is not in the future
+            return value <= Date.now();
+        },
+        message: "Invalid uploadDate, must not be in the future",
+    },
+},
+
+```
+
 #### ` ⚠ This is a single-file example for absolute beginners. If you find any bug or any kind of problem don't forget to inform me. If you find it truly helpful don't forget to give it a star ⭐`
 
 ## Some additional information:
